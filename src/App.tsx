@@ -80,7 +80,7 @@ function App() {
         parsedBestScore[gridSize] = utilizedTime;
         localStorage.setItem("bestScore", JSON.stringify(parsedBestScore));
         setBestScore(utilizedTime);
-        alert(`New Best Score: ${utilizedTime} tries!`);
+        alert(`New Best Score: ${utilizedTime} secs!`);
       }
       setTimeLeft(0);
     }
