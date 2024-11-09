@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -48,3 +49,7 @@ export default tseslint.config({
   },
 })
 ```
+=======
+# MemGam
+A memory matching game built with React. Players select cards to find pairs in a grid of increasing difficulty. The game tracks tries and times players, recording the best scores for each difficulty level.
+>>>>>>> 763a19a0f43f15ec63f1530aa2e49c3632c821df
