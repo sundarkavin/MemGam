@@ -139,7 +139,7 @@ const Card = React.memo(({ val, isClicked, handleCardClick, index, isCompleted }
   <div
     role="button"
     onClick={() => handleCardClick(index)}
-    className={`rounded h-12 w-12 ml-5 mt-5 p-3 ${isCompleted ? "bg-green-200" : "bg-slate-50"} active:scale-95 active:shadow-lg focus:outline-none`}
+    className={`rounded text-black h-12 w-12 ml-5 mt-5 p-3 ${isCompleted ? "bg-green-200" : "bg-slate-50"} active:scale-95 active:shadow-lg focus:outline-none`}
   >
     {isCompleted || isClicked ? val : "?"}
   </div>
