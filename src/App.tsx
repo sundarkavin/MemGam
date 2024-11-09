@@ -9,7 +9,7 @@ function App() {
   const [totalTries, setTotalTries] = useState<number>(0);
   const [isDisabled, setIsDisabled] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60);
-
+  const [gameWon, setGameWon] = useState<boolean>(false);
   type TimeLimits = { [key: number]: number };
   const [bestScore, setBestScore] = useState<number | null>(null);
 
@@ -23,7 +23,7 @@ function App() {
   }, [gridSize]);
 
   useEffect(() => {
-    const timer: any = timeLeft > 0 && setInterval(() => setTimeLeft((t) => t - 1), 1000);
+    const timer: any = timeLeft > 0 && !gameWon && setInterval(() => setTimeLeft((t) => t - 1), 1000);
     if (timeLeft === 0) alert("Time's up! Try again.");
     return () => clearInterval(timer);
   }, [timeLeft]);
@@ -37,6 +37,9 @@ function App() {
     setMatchedValues([]);
     setTotalTries(0);
     setIsDisabled(false);
+    setGameWon(false); 
+    const timeLimits: TimeLimits = { 8: 60, 16: 90, 32: 120, 64: 180 };
+    setTimeLeft(timeLimits[gridSize]);
   }, [gridSize]);
 
   useEffect(() => {
@@ -70,7 +73,8 @@ function App() {
   };
 
   useEffect(() => {
-    if (matchedValues.length === gridSize / 2) {
+    if (matchedValues.length === gridSize / 2 && !gameWon) {
+      setGameWon(true);
       alert("Congratulations, you won!");
       const timeLimits: TimeLimits = { 8: 60, 16: 90, 32: 120, 64: 180 };
       const utilizedTime = timeLimits[gridSize] - timeLeft;
@@ -82,15 +86,15 @@ function App() {
         setBestScore(utilizedTime);
         alert(`New Best Score: ${utilizedTime} secs!`);
       }
-      setTimeLeft(0);
     }
-  }, [matchedValues, gridSize, timeLeft, bestScore]);
+  }, [matchedValues, gridSize, timeLeft]);
 
   const retryGame = () => {
     setTotalTries(0);
     setSelectedIndices([]);
     setMatchedValues([]);
     resetGame();
+    setGameWon(false); 
   };
 
   return (
