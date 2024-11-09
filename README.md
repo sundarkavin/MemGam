@@ -13,3 +13,9 @@ A memory matching game built with React. Players select cards to find pairs in a
 1. Clone the repository:
    ```bash
    git clone https://github.com/sundarkavin/MemGam
+
+## Usage
+- Use the dropdown menu to choose a difficulty level.
+- Click on cards to reveal them and try to find matching pairs.
+- Track your best score for each difficulty level, saved locally.
+   
