@@ -1,9 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Press+Start+2P&family=VT323&display=swap');
-body{
-    font-family: "VT323", monospace;
-    font-weight: 400;
-    font-style: normal;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Rubik+Gemstone&family=Press+Start+2P&family=VT323&display=swap");
+
+@font-face {
+  font-family: "Doto-Regular";
+  src: local("Doto-Regular"), url("./fonts/Doto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Doto-ExtraBold";
+  src: local("Doto-ExtraBold.ttf"), url("./fonts/Doto-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Doto-black";
+  src: local("Doto-black.ttf"), url("./fonts/Doto-black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ZenDots-Regular";
+  src: local("ZenDots-Regular.ttf"), url("./fonts/ZenDots-Regular.ttf") format("truetype");
+}
+body {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+.rubik-gemstones-regular {
+  font-family: "Rubik Gemstones", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.Doto-Bold {
+  font-family: "Doto-ExtraBold", sans-serif;;
+}
+.Doto-black {
+  font-family: "Doto-black", sans-serif;;
+}
+.ZenDots-Regular {
+  font-family: "ZenDots-Regular", sans-serif;;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fade Out Animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+path {
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out infinite, fadeOut 3s ease-in-out infinite;
+
+}
+/* Apply different delays for randomization effect */
+path:nth-child(odd) {
+  animation-delay: 1s, 4s; /* Odd elements */
+}
+
+path:nth-child(even) {
+  animation-delay: 0.5s, 3s; /* Even elements */
+} 
+.path:nth-child(3n) {
+  animation-delay: 2s, 5s; /* Every third element */
+}
+
+.path:nth-child(4n) {
+  animation-delay: 3s, 6s; /* Every fourth element */
 }

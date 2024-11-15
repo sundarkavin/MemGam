@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         VT323: ['VT323', 'monospace'],
+        rubik: ['Rubik Gemstone', 'system-ui', 'sans-serif'],
       },
     },
   },
