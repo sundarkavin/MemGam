@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
 import "./App.css";
-import BgImg from "./assets/background.png";
-import BackgroundSvg from "./BackgroundSvg";
 import FlipSound from "./assets/click.mp3";
 
 function App() {
@@ -100,7 +98,7 @@ function App() {
 
   return (
     <div className=" w-[100vw] min-h-screen bg-[#F2F9FE] overflow-x-hidden relative">
-      <BackgroundSvg />
+      
       {/* <div className="absolute left-1/2 bottom-0 3xl:inset-0 -translate-x-1/2 3xl:translate-x-0 w-[100%]" aria-hidden="true">
             <img
               width="1440"
@@ -117,7 +115,7 @@ function App() {
           <div className="relative bg-clip-padding border rounded-xl bg-white/40 border-white/90 shadow transition-colors duration-300 p-6">
             <div className="grid grid-cols-4">
               <div
-                onClick={(e) => setGridSize(8)}
+                onClick={() => setGridSize(8)}
                 className={`h-10 col-span-1 text-center last:border-none border-r border-r-slate-300 flex justify-center items-center`}
                 role="button"
               >
@@ -129,7 +127,7 @@ function App() {
               </div>
 
               <div
-                onClick={(e) => setGridSize(12)}
+                onClick={() => setGridSize(12)}
                 className={`h-10 col-span-1 text-center last:border-none border-r border-r-slate-300 flex justify-center items-center`}
                 role="button"
               >
@@ -141,7 +139,7 @@ function App() {
               </div>
 
               <div
-                onClick={(e) => setGridSize(20)}
+                onClick={() => setGridSize(20)}
                 className={`h-10 col-span-1 text-center last:border-none border-r border-r-slate-300 flex justify-center items-center`}
                 role="button"
               >
@@ -153,7 +151,7 @@ function App() {
               </div>
 
               <div
-                onClick={(e) => setGridSize(32)}
+                onClick={() => setGridSize(32)}
                 className={`h-10 col-span-1 text-center last:border-none flex justify-center items-center`}
                 role="button"
               >
