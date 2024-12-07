@@ -98,14 +98,6 @@ function App() {
 
   return (
     <div className=" w-[100vw] min-h-screen bg-[#F2F9FE] overflow-x-hidden relative">
-      
-      {/* <div className="absolute left-1/2 bottom-0 3xl:inset-0 -translate-x-1/2 3xl:translate-x-0 w-[100%]" aria-hidden="true">
-            <img
-              width="1440"
-              src={BgImg}
-              className="w-[1200px] lg:w-[1750px] 3xl:w-full max-w-screen-3xl 3xl:max-w-full h-auto 3xl:h-full 3xl:object-contain 3xl:object-bottom"
-            />
-          </div> */}
       <p className="ZenDots-Regular text-center text-4xl p-5">Memgam</p>
       <div className="flex justify-center items-center">
         <div>
@@ -201,7 +193,7 @@ interface CardProps {
   handleCardClick: (index: number) => void;
 }
 
-const Card = React.memo(({ val, isClicked, handleCardClick, index, isCompleted }: CardProps) => {
+const MemoizedCard = React.memo(({ val, isClicked, handleCardClick, index, isCompleted }: CardProps) => {
   // Determine the appropriate Tailwind classes based on card state
   const baseClasses =
     "Doto-Bold rounded-lg h-12 w-12 sm:h-16 sm:w-16 flex items-center justify-center text-3xl font-extrabold transition-transform transform active:scale-95";
@@ -225,8 +217,6 @@ const Card = React.memo(({ val, isClicked, handleCardClick, index, isCompleted }
       {isCompleted || isClicked ? val : "?"}
     </div>
   );
-});
-
-const MemoizedCard = React.memo(Card);
+}); 
 
 export default App;
